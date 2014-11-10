@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_vInteractionMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -11,8 +12,9 @@
 #define Btn4 37453
 #define Btn5 37454
 #define Btn6 37455
+#define Btn7 37456
 #define Title 37401
-private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6"];
+private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7"];
 if(!dialog) then {
 	createDialog "vInteraction_Menu";
 };
@@ -28,6 +30,7 @@ _Btn3 = _display displayCtrl Btn3;
 _Btn4 = _display displayCtrl Btn4;
 _Btn5 = _display displayCtrl Btn5;
 _Btn6 = _display displayCtrl Btn6;
+_Btn7 = _display displayCtrl Btn7;
 life_vInact_curTarget = _curTarget;
 
 //Set Repair Action
@@ -68,6 +71,17 @@ if(playerSide == west) then {
 			if(count crew _curTarget == 0 && {canMove _curTarget}) then { _Btn6 ctrlEnable false;} else {_Btn6 ctrlEnable true;};
 		};
 	};
+	
+	if(__GETC__(life_coplevel) > 2) then
+	{
+		_Btn7 ctrlSetText localize "STR_vInAct_Crush";
+		_Btn7 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_CrushAction;"
+	}
+	else
+	{
+		_Btn7 ctrlShow false;
+	};
+	
 } 
 else 
 {
@@ -104,4 +118,5 @@ else
 	_Btn4 ctrlShow false;
 	_Btn5 ctrlShow false;
 	_Btn6 ctrlShow false;
+	_Btn7 ctrlShow false;
 };

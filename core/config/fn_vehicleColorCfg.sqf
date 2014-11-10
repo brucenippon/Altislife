@@ -33,6 +33,25 @@ switch (_vehicle) do
 		];
 	};
 	
+	case "B_Heli_Light_01_armed_F":
+		{
+		_ret = 
+		[
+			["textures\vehicles\rebel_hummingbird.jpg","civ"]
+		];
+	};
+	
+	// GhostHawk
+	case "B_Heli_Transport_01_F":
+	{
+		_path = "\a3\air_f_beta\Heli_Transport_01\Data\";
+		_ret =
+		[
+			[_path + "heli_transport_01_ext01_co.paa","civ",_path + "heli_transport_01_ext02_co.paa"],
+			["textures\vehicles\ghosthawk_01.jpg","cop","textures\vehicles\ghosthawk_02.jpg"]
+		];
+	};
+	
 	case "O_Heli_Light_02_F":
 	{
 		_ret =

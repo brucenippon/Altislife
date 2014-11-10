@@ -363,6 +363,22 @@
 			<Italian>Hai despoitato €%1 nel conto bancario della tua gang</Italian>
 			<Portuguese>Você depositou R$%1 na conta de sua gangue.</Portuguese>
  		</Key>
+		 <Key ID="STR_ATM_NotGangOwner">
+ 			<Original>You are not a gang owner!</Original>
+ 			<English>You are not a gang owner!</English>
+			<German>Du hast $%1 auf dein Gang Konto überwiesen</German>
+ 			<French>Vous avez déposé $%1 sur le compte bancaire de votre gang.</French>
+			<Italian>Hai despoitato €%1 nel conto bancario della tua gang</Italian>
+			<Portuguese>Você depositou R$%1 na conta de sua gangue.</Portuguese>
+ 		</Key>
+		 <Key ID="STR_ATM_GangWithdrawSuccess">
+ 			<Original>You have withdrawn $%1 from your gang bank account</Original>
+ 			<English>You have withdrawn $%1 from your gang bank account</English>
+			<German>Du hast $%1 von deinem Bankkonto abgehoben</German>
+ 			<French>Vous avez retiré $%1 de votre compte en banque</French>
+			<Italian>Hai prelevato €%1 dal tuo conto in banca</Italian>
+			<Portuguese>Você sacou R$%1 de sua conta bancária.</Portuguese>
+ 		</Key>
 	</Package>
 	<Package name="Cell_Phone">
 		<Key ID="STR_CELL_Title">
@@ -3491,6 +3507,57 @@
 			<Italian>Cocaina processata</Italian>
 			<Portuguese>Cocaína Refinada</Portuguese>
 		</Key>
+		<Key ID="STR_Item_Cannabis">
+			<Original>Pot Plants</Original>
+			<English>Pot Plants</English>
+			<German>Marihuana-Pflanzen</German>
+			<French>Plants de marihuana</French>
+		</Key>
+		<Key ID="STR_Item_Rye">
+			<Original>Rye Plants</Original>
+		</Key>
+		<Key ID="STR_Item_Hops">
+			<Original>Hops</Original>
+		</Key>
+		<Key ID="STR_Item_Yeast">
+			<Original>Yeast</Original>
+		</Key>
+               <Key ID="STR_Gather_Rye">
+			<Original>Gather Rye</Original>
+			<English>Gather Rye</English>
+		</Key>
+		<Key ID="STR_Gather_Hops">
+			<Original>Pick Hops</Original>
+			<English>Pick Hops</English>
+		</Key>
+		<Key ID="STR_Gather_Yeast">
+			<Original>Gather Yeast</Original>
+			<English>Gather Yeast</English>
+		</Key>
+		<Key ID="STR_MISC_StPubIntox">
+			<Original>%1 has passed out drunk in public!</Original>
+			<English>%1 has passed out drunk in public!</English>
+			<German>%1 hat sich betrunken im öffentlichen bestanden!</German>
+		</Key>
+		<Key ID="STR_MISC_AlreadyDrinking">
+			<Original>You are already drinking some booze</Original>
+			<English>You are already drinking some booze</English>
+			<German>Du bist schon etwas trinken Alkohol</German>
+		</Key>
+		<Key ID="STR_MISC_WestIndNoNo">
+			<Original>No drinking on duty</Original>
+			<English>No drinking on duty</English>
+			<German>Kein Trinkwasser im Dienst</German>
+			<French>Pas boire pendant le travail</French>
+		</Key>
+		<Key ID="STR_MISC_DrunkBlackOut">
+			<Original>You have passed out</Original>
+			<English>You have passed out</English>
+		</Key>
+		<Key ID="STR_MISC_DrunkBlackOut1">
+			<Original>What the hell happened to me??</Original>
+			<English>What the hell happened to me??</English>
+		</Key>
 		<Key ID="STR_Item_SpikeStrip">
 			<Original>Spike Strip</Original>
 			<English>Spike Strip</English>
@@ -4299,6 +4366,14 @@
 			<Italian>Menu d'interazione Giocatore</Italian>
 			<Portuguese>Menu de Interação do Jogador</Portuguese>
 		</Key>
+		<Key ID="STR_pInAct_Breathalyzer">
+			<Original>Breathalyser</Original>
+			<English>Breathalyser</English>
+			<German>Alkoholtest</German>
+			<French>Alkoholtest</French>
+			<Italian>Alkoholtest</Italian>
+			<Portuguese>Alkoholtest</Portuguese>
+		</Key>
 		<Key ID="STR_pInAct_PutInCar">
 			<Original>Put in vehicle</Original>
 			<English>Put in vehicle</English>
@@ -4482,6 +4557,14 @@
 			<French>Déposer pour le gang</French>
 			<Italian>Deposita alla Gang</Italian>
 			<Portuguese>Depositar para a Gangue</Portuguese>
+		</Key>
+		<Key ID="STR_pInAct_WithdrawFromGang">
+			<Original>Withdraw from Gang</Original>
+			<English>Withdraw from Gang</English>
+			<German>Auf Gang-Konto einzahlen</German>
+			<French>Withdraw pour le gang</French>
+			<Italian>Withdraw alla Gang</Italian>
+			<Portuguese>Withdraw para a Gangue</Portuguese>
 		</Key>
 	</Package>
 		<Package name="Vehicle_Interaction">

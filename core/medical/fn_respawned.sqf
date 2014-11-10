@@ -11,7 +11,7 @@ life_use_atm = TRUE;
 life_hunger = 100;
 life_thirst = 100;
 life_carryWeight = 0;
-life_cash = 0; //Make sure we don't get our cash back.
+pbh_life_cash = 0; //Make sure we don't get our cash back.
 life_respawned = false;
 player playMove "amovpercmstpsnonwnondnon";
 
@@ -38,14 +38,14 @@ switch(playerSide) do
 };
 
 //Cleanup of weapon containers near the body & hide it.
-if(!isNull life_corpse) then {
+/*if(!isNull life_corpse) then {
 	private["_containers"];
 	life_corpse setVariable["Revive",TRUE,TRUE];
 	_containers = nearestObjects[life_corpse,["WeaponHolderSimulated"],5];
 	{deleteVehicle _x;} foreach _containers; //Delete the containers.
 	hideBody life_corpse;
 };
-
+*/
 //Destroy our camera...
 life_deathCamera cameraEffect ["TERMINATE","BACK"];
 camDestroy life_deathCamera;
@@ -68,6 +68,6 @@ if(!isNil "life_copRecieve") then {
 if(life_removeWanted) then {
 	[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 };
-
+hideBody life_corpse;
 [] call SOCK_fnc_updateRequest;
 [] call life_fnc_hudUpdate; //Request update of hud.

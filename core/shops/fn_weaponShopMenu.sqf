@@ -12,7 +12,6 @@ disableSerialization;
 if(!(createDialog "life_weapon_shop")) exitwith {};
 
 _config = [_this select 3] call life_fnc_weaponShopCfg;
-diag_log format["Armaments : %1", _config];
 if(typeName _config == "STRING") exitWith {hint _config; closeDialog 0;};
 
 ctrlSetText[38401,_config select 0];
@@ -20,7 +19,7 @@ ctrlSetText[38401,_config select 0];
 _filters = ((findDisplay 38400) displayCtrl 38402);
 lbClear _filters;
 
-_filters lbAdd "Shop Inventory";
-_filters lbAdd "Your Inventory";
+_filters lbAdd localize "STR_Shop_Weapon_ShopInv";
+_filters lbAdd localize "STR_Shop_Weapon_YourInv";
 
 _filters lbSetCurSel 0;

@@ -68,9 +68,10 @@ while {player getVariable "restrained"} do
 		
 if(alive player) then
 {
+	player say3D "cuff"; 	//cuff sound
 	player switchMove "AmovPercMstpSlowWrflDnon_SaluteIn";
 	player setVariable ["Escorting",false,true];
 	player setVariable ["transporting",false,true];
 	detach player;
-	player say3D "cuff"; 	//cuff sound
+	
 };

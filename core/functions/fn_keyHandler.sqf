@@ -106,8 +106,20 @@ switch (_code) do
 		if(_shift) then {_handled = true;};
 		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget in [civilian,independent]) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && !(player getVariable "restrained") && speed cursorTarget < 1) then
 		{
+			Diag_log "Restrain Progressing to fnc_restrainAction";
 			[] call life_fnc_restrainAction;
+		}
+		else
+		{
+			// Temp logging for restrain issue
+			if (playerSide == west) then
+			{
+				// Log if west only
+				Diag_log format["Restrain Log : Speed of target (%1) , Distance to target (%2) , Is restrained already? (%3) , Are you restrained (%4) , Is target being escorted? (%5)",speed cursorTarget, cursorTarget distance player, cursorTarget getVariable "restrained", player getVariable "restrained", cursorTarget getVariable "Escorting"];
+				
+			};
 		};
+		
 		
 		if(_shift && playerSide == civilian && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget in [civilian,independent,west]) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && (cursorTarget getVariable "surrender") && !(cursorTarget getVariable "restrained") && !(player getVariable "restrained") && speed cursorTarget < 1) then
 		{
@@ -133,21 +145,20 @@ switch (_code) do
 	//Knock out, this is experimental and yeah...
 	case 34:
 	{
-		diag_log "fn_keyhandler - Key G pressed";
 		if(_shift) then {_handled = true;};
-		diag_log "fn_keyhandler - about to do something?";
 		if(_shift && playerSide == civilian && !isNull cursorTarget && cursorTarget isKindOf "Man" && isPlayer cursorTarget && alive cursorTarget && cursorTarget distance player < 4 && speed cursorTarget < 1) then
 		{
-			diag_log "fn_keyhandler - Got through stage one";
-			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !life_istazed) then
-			{
-				diag_log "fn_keyhandler - KNOCKOUT";
-				[cursorTarget] spawn life_fnc_knockoutAction;
+		if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !life_istazed) then
+		{
+		[cursorTarget] spawn life_fnc_knockoutAction;
+		if("ItemRadio" in assignedItems cursorTarget) then {
+			cursorTarget removeweapon "ItemRadio";
+			hint "The cellphone of the person was placed on the ground.";
+			_defenceplace1 = "Item_ItemRadio" createVehicle (player modelToWorld[0,0,0]);}
+			else { hint "The person that you knock out have no cellphone!"};
 			};
 		};
-		
 	};
-
 	//T Key (Trunk)
 	case 20:
 	{
@@ -177,7 +188,7 @@ switch (_code) do
 	{
 		//If cop run checks for turning lights on.
 		if(_shift && playerSide in [west,independent]) then {
-			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F"]) then {
+			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","C_Hatchback_01_F","I_MRAP_03_F"]) then {
 				if(!isNil {vehicle player getVariable "lights"}) then {
 					if(playerSide == west) then {
 						[vehicle player] call life_fnc_sirenLights;

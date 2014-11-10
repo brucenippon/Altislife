@@ -181,11 +181,14 @@ if(count (handGunItems player) > 0) then
     ["life_inv_rock", life_inv_rock],
     ["life_inv_cement", life_inv_cement],
     ["life_inv_goldbar", life_inv_goldbar],
+	["life_inv_goldbap", life_inv_goldbarp],
     ["life_inv_blastingcharge", life_inv_blastingcharge],
     ["life_inv_boltcutter", life_inv_boltcutter],
     ["life_inv_defusekit", life_inv_defusekit],
     ["life_inv_storagesmall", life_inv_storagesmall],
-    ["life_inv_storagebig", life_inv_storagebig]
+    ["life_inv_storagebig", life_inv_storagebig],
+	["life_inv_sugeryknife", life_inv_surgeryknife],
+	["life_inv_zipties", life_inv_zipties]
 ];
 
 _ret set[count _ret,_uItems];

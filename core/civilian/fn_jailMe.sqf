@@ -9,9 +9,25 @@ private["_ret","_bad","_time","_bail","_esc","_countDown"];
 _ret = [_this,0,[],[[]]] call BIS_fnc_param;
 _bad = [_this,1,false,[false]] call BIS_fnc_param;
 if(_bad) then { _time = time + 1100; } else { _time = time + (15 * 60); };
-
-if(count _ret > 0) then { life_bail_amount = (_ret select 3); } else { life_bail_amount = 1500; _time = time + (10 * 60); };
-_esc = false;
+player setObjectTextureGlobal [0,"textures\uniforms\prisoner_uniform.jpg"];
+if(count _ret > 0) then { 
+	life_bail_amount = (_ret select 3); 
+	if(life_bail_amount < 25000) then {
+		_time = time + (20*60);
+	} else {
+		if(life_bail_amount > 24999 && life_bail_amount < 50000) then  {
+			_time = time + (26*60);
+		}
+		else {
+		_time = time +(30*60);
+		};
+	};
+	
+} else { 
+	life_bail_amount = 5000; 
+	_time = time + (15 * 60);
+};
+_esc = false; 
 _bail = false;
 
 [_bad] spawn
@@ -19,11 +35,21 @@ _bail = false;
 	life_canpay_bail = false;
 	if(_this select 0) then
 	{
-		sleep (10 * 60);
+		if(life_bail_amount < 25000) then {
+			_time = time + (20*30);
+		} else {
+			if(life_bail_amount > 24999 && life_bail_amount < 50000) then  {
+				_time = time + (26*30);
+			}
+			else {
+			_time = time +(30*30);
+			};
+		};
+		sleep _time;
 	}
 		else
 	{
-		sleep (5 * 60);
+		sleep (7 * 60);
 	};
 	life_canpay_bail = nil;
 };
@@ -58,6 +84,8 @@ switch (true) do
 		hint localize "STR_Jail_Paid";
 		serv_wanted_remove = [player];
 		player setPos (getMarkerPos "jail_release");
+		removeUniform player; //Add this line
+		player addUniform "U_C_Poor_1"; //Add this line
 		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 		[5] call SOCK_fnc_updatePartial;
 	};
@@ -73,10 +101,13 @@ switch (true) do
 	
 	case (alive player && !_esc && !_bail) :
 	{
+		serv_wanted_remove = [player];
 		life_is_arrested = false;
 		hint localize "STR_Jail_Released";
 		[[getPlayerUID player],"life_fnc_wantedRemove",false,false] spawn life_fnc_MP;
 		player setPos (getMarkerPos "jail_release");
+		removeUniform player; //Add this line
+		player addUniform "U_C_Poor_1"; //Add this line
 		[5] call SOCK_fnc_updatePartial;
 	};
 };

@@ -11,7 +11,7 @@ waitUntil {scriptDone _handle};
 
 //Load player with default cop gear.
 player addUniform "U_Rangemaster";
-player addVest "V_Rangemaster_belt";
+player addVest "V_TacVest_blk_POLICE";
 player addBackpack "H_Cap_police";
 
 player addWeapon "hgun_P07_snds_F";
@@ -33,8 +33,8 @@ player addItem "ItemWatch";
 player assignItem "ItemWatch";
 player addItem "ItemGPS";
 player assignItem "ItemGPS";
-player addItem "NVGoggles";
-player assignItem "NVGoggles";
+player addItem "ItemRadio";
+player assignItem "ItemRadio";
 
 [] spawn life_fnc_customUniforms;
 [] call life_fnc_saveGear;

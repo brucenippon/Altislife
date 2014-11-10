@@ -19,15 +19,15 @@ _robber = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param; //Can you guess? Alrig
 _action = [_this,2] call BIS_fnc_param;//Action name
 _cops = (west countSide playableUnits);
 
-if(_cops < 0) exitWith {hint "You can't rob this register, there aren't any police online!";};
-if(side _robber == west) exitWith { hint "What do you think you're doing?" };
+if(_cops < 3) exitWith {hint "You can't rob this register, there aren't enough police online!";};
+if(side _robber == west) exitWith { hint "Seriously, WTF?" };
 if(side _robber == independent) exitWith { hint "Don't you have bigger fish to fry?" };
 if(_robber distance _shop > 5) exitWith { hint "You need to be within 5m of the cash register to rob it!" };
 if (vehicle player != _robber) exitWith { hint "Get out of your vehicle!" };
 
 if !(_kassa) then { _kassa = 1000; };
 if (_rip) exitWith { hint "Robbery already in progress!" };
-if (currentWeapon _robber == "") exitWith { hint "You do not threaten me! Get out of here!" };
+if (currentWeapon _robber == "") exitWith { hint "HAHAHA, you Noob, get lost!" };
 
 if !(alive _robber) exitWith {};
 if (_kassa == 0) exitWith { hint "There is no cash in the register!" };
@@ -36,8 +36,6 @@ _rip = true;
 _kassa = 10000 + round(random 10000);
 _shop removeAction _action;
 _shop switchMove "AmovPercMstpSsurWnonDnon";
-_chance = random(100);
-if(_chance >= 85) then { hint "The cashier hit the silent alarm, police have been alerted!"; [[1,format["ALARM! - Store: %1 is being robbed!", _shop]],"life_fnc_broadcast",west,false] spawn life_fnc_MP; };
 disableSerialization;
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNameSpace getVariable "life_progress";
@@ -54,7 +52,7 @@ if(_rip) then
    _Pos = position player; // by ehno: get player pos
    _marker = createMarker [_mrkstring, _Pos]; //by ehno: Place a Marker on the map
    _marker setMarkerColor "ColorRed";
-   _marker setMarkerText "!ALARM";
+   _marker setMarkerText "";
    _marker setMarkerType "mil_warning";
    // [[1,"A store is being robbed!"],"life_fnc_broadcast",true,false] spawn life_fnc_MP; // General broadcast alert to everyone, uncomment for testing, or if you want it anyway.
 
@@ -89,6 +87,6 @@ if(_rip) then
    [[getPlayerUID _robber,name _robber,"211"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 };
 
-sleep 600;
+sleep 900;
 _action = _shop addAction["Rob Cash Register",life_fnc_robShops];	
 _shop switchMove "";

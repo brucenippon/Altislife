@@ -33,16 +33,15 @@ if(_veh == "B_Heli_Transport_01_F") then
 	_vehicle removeMagazinesTurret ["2000Rnd_65x39_Belt_Tracer_Red",[2]];
 };
 
-if(_veh == "B_Heli_Attack_01_F") then 
+if(_veh == "B_Heli_Light_01_armed_F") then 
 {
-	_vehicle removeMagazinesTurret ["24Rnd_PG_missiles",[1]];
-	_vehicle removeMagazinesTurret ["4Rnd_AAA_missiles",[1]];
-	_vehicle removeMagazinesTurret ["1000Rnd_20mm_shells",[1]];
+	_vehicle removeMagazinesTurret ["5000Rnd_762x51_Belt",[-1]];
+	_vehicle removeMagazinesTurret ["24Rnd_missiles",[-1]];
 };
 
 if(_veh == "O_Heli_Light_02_F") then 
 {
-	_vehicle removeMagazinesTurret ["2000Rnd_65x39_Belt_Tracer_Green",[-1]];
+	_vehicle removeMagazinesTurret ["2000Rnd_65x39_Belt_Tracer_Green_Splash",[-1]];
 	_vehicle removeMagazinesTurret ["12Rnd_PG_missiles",[-1]];
 };
 

@@ -41,6 +41,24 @@ switch (_vehicle) do
 		};
 	};
 	
+	case "B_Heli_Light_01_armed_F":
+		{
+		switch (_index) do
+		{
+			case 0: {_color = "Camo"};
+
+		};
+	};
+	
+	case "B_Heli_Transport_01_F":
+	{
+		switch (_index) do
+		{
+			case 0: {_color = "Black"};
+			case 1: {_color = "Cop"};
+		};
+	};
+	
 	case "C_Hatchback_01_sport_F":
 	{
 		switch(_index) do

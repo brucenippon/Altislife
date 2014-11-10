@@ -105,8 +105,9 @@ life_fnc_garageRefund = compileFinal
 ";
 
 [] execVM "core\init_survival.sqf";
-[] execVM "core\fn_addKey.sqf";
 [] execVM "core\welcome.sqf";
+[] execVM "core\fn_addKey.sqf";
+
 
 __CONST__(life_paycheck,life_paycheck);
 
@@ -127,3 +128,4 @@ switch (__GETC__(life_donator)) do
 };
 
 [] spawn life_fnc_fatigueReset;
+[] spawn life_fnc_autoSave;

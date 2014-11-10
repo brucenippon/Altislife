@@ -191,11 +191,13 @@ class Life_Client_Core
 		class smartphone {};
 		class newMsg {};
 		class showMsg {};
+		class cellphone2 {};
 	};
 	
 	class Functions
 	{
 		file = "core\functions";
+		class autoSave {};
 		class calWeightDiff {};
 		class fetchCfgDetails {};
 		class handleInv {};
@@ -272,6 +274,7 @@ class Life_Client_Core
 		class freezePlayer {};
 		class waterChargeTimer {};
 		class hasOrgan {};
+		class civInteractionMenu {};
 	};
 	
 	class Vehicle
@@ -303,8 +306,6 @@ class Life_Client_Core
 		class ticketGive {};
 		class ticketPay {};
 		class ticketPrompt {};
-		class showArrestDialog {};
-		class arrestDialog_Arrest {};
 		class copSiren {};
 		class copSiren2 {};
 		class spikeStripEffect {};
@@ -322,6 +323,8 @@ class Life_Client_Core
 		class seizeObjects {};                  
 		class seizePlayerWeapon {};           
 		class seizePlayerWeaponAction {};
+		class copOpener {};
+		class breathalyzer {};
 	};
 	
 	class Gangs
@@ -384,6 +387,11 @@ class Life_Client_Core
 		class storageBox {};
 		class weed {};
 		class underwaterCharge {};
+		class CarAlarmSound {};
+		class scratchcard {};
+		class drinkbeer {};
+		class drinkmoonshine {};
+		class drinkwhiskey {};
 	};
 	
 	class Dialog_Controls
@@ -409,6 +417,7 @@ class Life_Client_Core
 		class safeFix {};
 		class vehicleGarage {};
 		class gangDeposit {};
+		class gangWithdraw {};
 		class safeInvGold {};
 		class safeGold {};
 		class goldTake {};

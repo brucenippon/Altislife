@@ -16,8 +16,9 @@
 			
 				idc = -1;
 				text = "icons\food.paa";
-				x = safeZoneX+safeZoneW-0.115; y = safeZoneY+safeZoneH-0.60;
-				w = 0.03; h = 0.04;
+				x = safeZoneX+safeZoneW-0.15; y = safeZoneY+safeZoneH-0.575;
+				//w = 0.03; h = 0.04; old value
+				w = 0.05; h = 0.06; //width and height of the icon
 			};
 			
 			class waterHIcon : life_RscPicture 
@@ -25,8 +26,9 @@
 			
 				idc = -1;
 				text = "icons\water.paa";
-				x = safeZoneX+safeZoneW-0.12; y = safeZoneY+safeZoneH-0.55;
-				w = 0.04; h = 0.04;
+				x = safeZoneX+safeZoneW-0.15; y = safeZoneY+safeZoneH-0.510;
+				//w = 0.04; h = 0.04; 
+				w = 0.05; h = 0.06; 
 			};
 			
 			class healthHIcon : life_RscPicture
@@ -34,24 +36,26 @@
 				
 				idc = -1;
 				text = "icons\health.paa";
-				x = safeZoneX+safeZoneW-0.11; y = safeZoneY+safeZoneH-0.50;
-				w = 0.02; h = 0.03;
+				x = safeZoneX+safeZoneW-0.15; y = safeZoneY+safeZoneH-0.445;
+				//w = 0.02; h = 0.03;
+				w = 0.05; h = 0.06;
 			};
 			class geldIcon : life_RscPicture
 			{
 				
 				idc = -1;
 				text = "icons\money.paa";
-				x = safeZoneX+safeZoneW-0.115; y = safeZoneY+safeZoneH-0.45;
-				w = 0.03; h = 0.03;
+				x = safeZoneX+safeZoneW-0.15; y = safeZoneY+safeZoneH-0.380;
+				//w = 0.03; h = 0.03;
+				w = 0.05; h = 0.05;
 			};
 			class fpsIcon : life_RscPicture
 			{
 				
 				idc = -1;
 				text = "icons\fps.paa";
-				x = safeZoneX+safeZoneW-0.11; y = safeZoneY+safeZoneH-0.408;
-				w = 0.06; h = 0.06;
+				x = safeZoneX+safeZoneW-0.09; y = safeZoneY+safeZoneH-0.315;
+				w = 0.09; h = 0.05;
 			};
 		};
 		
@@ -69,7 +73,7 @@
 				sizeEx=0.03;
 				size=1;
 				font="PuristaSemibold";
-				colorBackground[]={0,0,0,0};
+				colorBackground[]= { 0, 0, 0, 0.5 };
 				colorText[] = { 1 , 1 , 1 , 1 };
 				shadow=true;
 				text="";
@@ -87,7 +91,7 @@
 				sizeEx=0.03;
 				size=1;
 				font="PuristaSemibold";
-				colorBackground[]={0,0,0,0};
+				colorBackground[]= { 0, 0, 0, 0.5 };
 				colorText[] = { 1 , 1 , 1 , 1 };
 				shadow=true;
 				text="";
@@ -105,7 +109,7 @@
 				sizeEx=0.03;
 				size=1;
 				font="PuristaSemibold";
-				colorBackground[]={0,0,0,0};
+				colorBackground[]= { 0, 0, 0, 0.5 };
 				colorText[] = { 1 , 1 , 1 , 1 };
 				shadow=true;
 				text="";
@@ -122,7 +126,7 @@
 				sizeEx=0.03;
 				size=1;
 				font="PuristaSemibold";
-				colorBackground[]={0,0,0,0};
+				colorBackground[]= { 0, 0, 0, 0.5 };
 				colorText[] = { 1 , 1 , 1 , 1 };
 				shadow=true;
 				text="";			
